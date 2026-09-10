@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    background: #1e293b;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+header a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Araç Kartları Izgarası (Grid) */
+.arac-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* Tekil Araç Kartı */
+.arac-karti {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.arac-karti:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.arac-karti img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.arac-bilgi {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.arac-baslik {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #0f172a;
+}
+
+.arac-tipi {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.arac-fiyat {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #059669;
+    margin-top: auto;
+}
+
+/* --- Araç Detay Sayfası Stilleri --- */
+.detay-kapsayici {
+    display: flex;
+    gap: 30px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .detay-kapsayici {
+        flex-direction: column; /* Mobilde resmi ve yazıları alt alta al */
+    }
+}
+
+.detay-resim {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .detay-resim { max-width: 100%; }
+}
+
+.detay-bilgi {
+    flex: 1;
+}
+
+.detay-ozellik-listesi {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.detay-ozellik-listesi li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ozellik-baslik {
+    font-weight: bold;
+    color: #64748b;
+}
+
+.geri-butonu {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: background 0.2s;
+}
+
+.geri-butonu:hover {
+    background-color: #e2e8f0;
+}
+
+/* --- Filtreleme Alanı Stilleri --- */
+.filtre-alani {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.filtre-grup {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 150px;
+}
+
+.filtre-grup label {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.filtre-grup select, .filtre-grup input {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.filtre-butonlar {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-filtrele {
+    background: #0284c7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-temizle {
+    background: #e2e8f0;
+    color: #475569;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-filtrele:hover { background: #0369a1; }
+.btn-temizle:hover { background: #cbd5e1; }
